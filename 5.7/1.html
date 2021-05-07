@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function Foo() { };
+        // var f1 = new Foo();
+        // console.log(f1 instanceof Foo);      //结果返回true
+
+
+        // say();
+        // function say(){
+        //     console.log("Hello");    //输出的是Hello
+        // }
+
+
+        // var fun = function(){
+        //     console.log(1);
+        // }
+        // function fun(){
+        //     console.log(2);
+        // }
+        // fun();       //结果返回1
+
+
+        // sayHi();
+        // var sayHi = function(){
+        //     console.log("Hi");   //结果是报错
+        // }
+
+
+        // function f(){
+        //     console.log(this);
+        // }
+        // f();     //结果返回Window
+
+
+        // function f(){
+        //     console.log(num);
+        //     var num = 1; 
+        // }
+        // f();  //结果是undefined
+
+
+        // function Foo(){
+        //     console.log(a);
+        //     var a = "hello";
+        //     console.log(a);
+        // }
+        // Foo();   //输出结果是undefined hello
+
+
+        // var b;
+        // function fun(){
+        //     b = "change";
+        // }
+        // console.log(b);
+        // fun();
+        // console.log(b);      //输出结果是undefined change
+
+
+        // str = "hello";
+        // var str;
+        // console.log(str);    //结果输出hello
+
+
+        // sayHi();
+        // function sayHi(){
+        //     console.log("Hi");    //输出结果是Hi
+        // }
+
+
+        // function a(){
+        //     var user = "张三";
+        //     console.log(this.user);
+        //     console.log(this);
+        // }
+        // a();    //结果输出undefined Window
+
+
+        // var num = 1;
+        // function f(){
+        //     var num = 2;
+        //     return num;
+        // }
+        // console.log(f());  //结果输出2
+
+
+        // function createCar(color,wheel){
+        //     var obj = new Object;
+        //     obj.color = color;
+        //     obj.wheel = wheel;
+        //     return obj;
+        // }
+        // var cat1 = createCar("红色","4");
+        // console.log(cat1.color);  //结果输出"红色"
+
+
+        // function test(){
+        //     b();
+        //     var a = 1;
+        //     function b(){
+        //         console.log(1);
+        //         console.log(a);
+        //         var a = 2;
+        //     }
+        // }
+        // test();   //结果输出 1 undefined
+
+
+        // function func(n,o){
+        //     console.log(o)
+        //     return{
+        //         func:function(m){
+        //             return func(m,n);
+        //         }
+        //     }
+        // }
+        // var a = func(0); a.func(1); a.func(2); a.func(3);  //输出结果undefined 0 0 0
+
+
+        // var a = {"x":0};
+        // var b = a;
+        // a.x = 1;
+        // console.log(b.x);  //输出结果是1
+
+
+        // const s = new Set();
+        // [2,3,4,5,2,2].forEach(x => s.add(x));
+
+        // for(let i of s){
+        //     console.log(i);
+        // }
+        // // 2 3 4 5
+
+
+        // const set = new Set([1,2,3,4,5]);
+        // [...set]
+        // // [1,2,3,4]
+
+        // const items = new Set([1,2,3,4,5,5,5,5]);
+        // items.size //5
+
+        // const set = new Set(document.querySelectorAll('div'));
+        // set.size //56
+
+        // const set = new Set();
+        // document
+        // .querySelectorAll('div')
+        // .forEach(div => set.add(div));
+        // set.size //56
+
+        // let set = new Set(['red','green','blue']);
+
+        // for (let item of set.keys()){
+        //     console.log(item);
+        // }
+
+        // for (let item of set.values()){
+        //     console.log(item);
+        // }
+
+        // for (let item of set.entries()){
+        //     console.log(item);
+        // }
+
+        
+        // Set.prototype[Symbol.iterator] === Set.prototype.values
+
+        // let set = new Set(['red','green','blue']);
+
+        // for(let x of set){
+        //     console.log(x);
+        // }
+
+        let set = new Set([1,4,9]);
+
+        set.forEach((value,key) =>console.log(key + ':' +value)) 
+
+
+        
+
+    </script>
+</body>
+
+</html> 
