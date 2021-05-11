@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script>
+       
+
+        $.ajax({
+            url:"http://vue.api.comcto.com/api/password2.php",
+            method:"get",
+            success:function(res){
+                console.log("服务器返回值:",res)
+            }
+        })
+        $.ajax({
+            url:"http://vue.api.comcto.com/api/password3.php",
+            method:"get",
+            success:function(res){
+                console.log("服务器返回值:",res)
+            }
+        })
+        $.ajax({
+            url:"http://vue.api.comcto.com/api/password4.php",
+            method:"get",
+            success:function(res){
+                console.log("服务器返回值:",res)
+            }
+        })
+        $.ajax({
+            url:"http://vue.api.comcto.com/api/password1.php",
+            method:"get",
+            success:function(res){
+                console.log("服务器返回值:",res)
+            }
+        })
+    </script>
+</body>
+</html>

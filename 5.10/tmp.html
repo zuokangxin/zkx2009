@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number undefined null boolean string symbol Object
+        let arr = [11,22,33,44]
+
+        // 获取 Array 原生的 迭代器接口
+        let it = arr[Symbol.iterator]()
+
+        console.log(it.next())
+        console.log(it.next())
+        console.log(it.next())
+        console.log(it.next())
+
+        for(let v of it){
+            console.log(v)
+        }
+
+        console.log("============================")
+        for(let v of it){
+            console.log(v)
+        }
+
+
+        console.log("============================")
+        for(let v of arr){
+            console.log(v)
+        }
+    </script>
+</body>
+</html>
