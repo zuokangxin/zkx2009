@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            id: '123',
+            name: '张三',
+            age: 18,
+            gender: '男',
+            hobbie: '睡觉'
+        }
+
+        obj[Symbol.iterator] = function () {
+            let keyArr = Object.keys(obj)
+            let index = 0
+            return {
+                next() {
+                    return index < keyArr.length ? {
+                        value: {
+                            key: keyArr[index],
+                            val: obj[keyArr[index++]]
+                        }
+                    } : {
+                        done: true
+                    }
+                }
+            }
+        }
+
+        for (let key of obj) {
+            console.log(key)
+        }
+
+        
+    </script>
+</body>
+
+</html>
