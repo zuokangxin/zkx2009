@@ -17,7 +17,7 @@
             border-collapse: collapse;
         }
 
-        .grid th,
+        .grid th
         td {
             padding: 10;
             border: 1px dashed #F3DCAB;
@@ -47,12 +47,12 @@
                         <label for="id">
                             编号：
                         </label>
-                        <input type="text" id="id">
+                        <input type="text" id="id" v-model="bookid">
                         <label for="name">
                             名称：
                         </label>
-                        <input type="text" id="name">
-                        <button>提交</button>
+                        <input type="text" id="name" v-model="bookname">
+                        <button v-on:click="add">提交</button>
                     </div>
                 </div>
             </div>
@@ -88,11 +88,25 @@
         new Vue({
             el: "#app",
             data: {
+                bookid:null,
+                bookname:null,
                 list: []
             },
             methods: {
                 del(i) {
                     this.list.splice(i, 1)
+                },
+                // 提交click事件
+                add(){
+                    alert(111)
+                    // 获取input中的值
+                   let book_info={
+                       id:this.bookid,
+                       name:this.bookname,
+                       time:"2021-5-12"
+                   }
+
+                   this.list.push(book_info)
                 }
             },
             created() {
@@ -103,6 +117,7 @@
                 })
             }
         })
+
     </script>
 </body>
 
