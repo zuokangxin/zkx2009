@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pcolor{
+        color: red;
+    }
+
+    .psize{
+        font-size: 30px;
+    }
+</style>
+<body>
+    <p v-bind:class="{pcolor:pc,psize:ps}">hello world</p>
+    <button v-on:click="changeColor">改变颜色</button> 
+    <button v-on:click="changeColor">改变字号</button>
+
+    <script src="/js/vue.2.6.12.min.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                pc:true,  //pcolor:pc 中的pc  true表示应用样式
+                ps:false,    //psize:ps中的ps  false不使用样式
+            },
+            methods:{
+                // 点击按钮改变样式
+                changeColor(){
+                    this.pc = !this.pc
+                },
+                changeColor(){
+                    this.ps = !this.ps
+                }
+            }
+        })
+    </script>
+</body>
+</html>

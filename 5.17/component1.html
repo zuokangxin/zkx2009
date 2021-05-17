@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件</title>
+</head>
+
+<body>
+    <div id="app">
+        <p> {{ msg1 }} </p>
+        <hello-world></hello-world>
+    </div>
+
+
+    <script src="/js/vue.js"></script>
+
+    <script>
+        // 定义一个组件
+        Vue.component("hello-world", {
+            // 组件里的data是一个函数return 一个对象
+            data() {
+                return {
+
+                }
+            },
+            template:`<div>
+                   <h1>Hello World</h1>
+                   <p> {{ msg2}}</p>
+                </div>`
+
+        })
+
+
+        // 根组件
+        new Vue({
+            el: "#app",
+            data:{
+                msg1:"Hello Vue",
+                msg2:"Hello msg2"
+            },
+        })
+    </script>
+</body>
+
+</html>
