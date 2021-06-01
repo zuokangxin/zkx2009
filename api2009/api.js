@@ -1,6 +1,7 @@
 const express = require("express")
 const mysql = require("mysql")
 const bodyParser = require('body-parser')
+const { query } = require("express")
 
 
 const app = express()
@@ -108,7 +109,6 @@ app.get("/check/email",(req,res)=>{
 
     });
 })
-
 //监听端口
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

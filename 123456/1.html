@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .box{
+        padding-top: 20px;
+    }
+    table{
+        width: 600px;
+        height: 40px;
+    } */
+
+    
+
+    td{
+        width: 200px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+<body>
+
+    <div id="app">
+        登录名：<input type="text" v-model="prop.root"><br>
+        姓名：<input type="text" v-model="prop.name"><br>
+        联系电话：<input type="text" name="" id="" v-model="prop.tel"><br>
+            <button @click="add">提交</button>
+            <button>返回</button>
+            <div class="box">
+                <table v-for="(item,index) in list" :key="index">
+                    <tr>
+                        <td> {{item.root}} </td>
+                        <td> {{item.name}} </td>
+                        <td> {{item.tel}} </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+    <script src="/js/vue.2.6.12.min.js"></script>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data(){
+                return{
+                    message:'Hello Vue',
+                    prop:{
+                        root:'',
+                        name:'',
+                        tel:'',
+                    },
+                    list:[{
+                        root:'1',
+                        name:'张明',
+                        tel:'13578659603',
+                    }]
+                }
+            },
+            methods:{
+                add(){
+                    let newObj = {
+                        root:this.prop.root,
+                        pwd:this.prop.pwd,
+                        name:this.prop.name,
+                        tel:this.prop.tel,
+                        re:this.re
+                    }
+                    this.list.push(newObj);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

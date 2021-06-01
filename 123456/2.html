@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style type="text/css">
+        .tab {
+            width: 600px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="createForm">
+            <table border="1">
+            <tr>
+                <td> 姓名: </td>
+                <td><input type="text" name="uname" v-model="userName"></td>
+            </tr>
+            <tr>
+                <td>登录名:</td>
+                <td><input type="text" name="uage" id="uage" v-model="userAge"></td>
+            </tr>
+            <tr>
+                <td> 手机号码:</td>
+                <td><input type="text" name="utel" id="tell" v-model="usertel"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" v-on:click="insertInfo">提交</button>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+
+
+
+        </div>
+        <table class="tab" border="1">
+            <tr>
+                <th>姓名</th>
+                <th>登录名</th>
+                <th>手机号码</th>
+            </tr>
+            <tr v-for="(person,index) in infoArr">
+                <td>{{person.uname}}</td>
+                <td>{{person.uage}}</td>
+                <td>{{person.utel}}</td>
+        
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+<script src="/js/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg: "hello",
+            userName: '',
+            userAge: '',
+            usertel: "",
+            options: [
+            ],
+            infoArr: []
+        },
+        methods: {
+            //添加数据的方法
+            insertInfo() {
+                var obj = {};
+                obj.uname = this.userName;
+                obj.uage = this.userAge;
+                obj.utel = this.usertel;
+                this.infoArr.push(obj);
+                console.log(obj);
+            },
+
+            computed:{
+                info:function(){
+                    let arr = [];
+                }
+            }
+        }
+    })
+
+</script>
